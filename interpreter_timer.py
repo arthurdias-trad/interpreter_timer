@@ -26,9 +26,12 @@ while start_time < end_time:
     else:
         terp = second_terp
     
-    temp = start_time + block
+    if (end_time - start_time) < block:
+        temp =  start_time + (end_time - start_time)
+    else:
+        temp = start_time + block
     print("{}: {} - {}".format(terp, start_time.strftime("%H:%M"), temp.strftime("%H:%M")))
     start_time = temp
     count += 1
 
-
+input("Press any key to exit")
